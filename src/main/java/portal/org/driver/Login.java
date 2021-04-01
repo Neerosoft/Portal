@@ -57,7 +57,7 @@ public class Login extends SelectorComposer<Component>  {
 			for(Cias c:cias) {
 				this.cbbcia.appendItem(c.getNamecia());
 				}
-		//	this.cbbcia.setValue(cias.get(0).getNamecia());	
+			this.cbbcia.setValue(cias.get(0).getNamecia());	
 			}
 		
 		catch(Exception e) {
