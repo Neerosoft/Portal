@@ -22,6 +22,7 @@ public class Index extends SelectorComposer<Component> {
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
 		comp.setAttribute("controller", this); 	
+		
 			
 	}
 	

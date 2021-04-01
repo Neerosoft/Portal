@@ -5,7 +5,7 @@
 <zk>
 
 <window id="winlogin"  border="normal"
-position="center" closable="false"    sizable="false" mode="modal">
+position="center" closable="false"    sizable="false" mode="modal" apply="portal.org.driver.Login">
 <caption image="faces/resources/pic/Java.png" label="WLS Account" />
 
    <hlayout>
@@ -25,7 +25,7 @@ position="center" closable="false"    sizable="false" mode="modal">
     
     <hlayout>
      <image src="faces/resources/pic/home.png" id="img_cia"/>  
-     <combobox id="cbbcia" tooltiptext="Seleccione una empresa"/>
+     <combobox id="cbbcia" tooltiptext="Seleccione una empresa" width="200px"/>
     </hlayout>   
      <separator/>
      

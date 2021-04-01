@@ -6,7 +6,7 @@
 <?link rel="shortcut icon" type="image/x-icon" href="faces/resources/pic/java.ico"?>
 <?script src="faces/resource/js/html5shiv.js" if="${zk.ie < 9}" ?>
 <?script src="faces/resource/js/respond.min.js" if="${zk.ie < 9}"?>
-<window border="none" id="winStart" apply="portal.org.driver.Index">
+<window border="none" id="winStart" apply="portal.org.driver.Index" style="background-image:url('faces/resources/pic/calibri.jpg')" visible="true">
 
 </window>
 </zk>
