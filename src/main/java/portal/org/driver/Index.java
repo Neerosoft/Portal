@@ -4,18 +4,19 @@ import java.io.UnsupportedEncodingException;
 
 import org.zkoss.bind.annotation.AfterCompose;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.Wire;
-import org.zkoss.zul.Button;
-import org.zkoss.zul.Messagebox;;
+
+import org.zkoss.zul.Window;;
 
 public class Index extends SelectorComposer<Component> {
 
 	private static final long serialVersionUID = 1L;
 	
 	@Wire
-	private Button btnSaludar;
+	private Window winStart;
 	
 	@Override
 	public void doAfterCompose(Component comp) throws Exception {
@@ -28,11 +29,10 @@ public class Index extends SelectorComposer<Component> {
   	public void init()throws UnsupportedEncodingException {
 	}
 	
-	@Listen("onClick=#btnSaludar")
-	public void btnok_Click() {
 	
-	Messagebox.show("Copiado","Portal", Messagebox.OK, Messagebox.INFORMATION);	
+	@Listen("onCreate=#winStart")
+	public void Login() {		  
+	        Executions.createComponents("page/modal/login.zul",null,null);
 		
 	}
-
 }

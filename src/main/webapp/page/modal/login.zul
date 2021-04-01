@@ -1,0 +1,39 @@
+<?page title="Login" contentType="text/html;charset=UTF-8"?>
+<?link rel="shortcut icon" type="image/x-icon" href="resources/pic/java.ico" ?>
+<?link rel="stylesheet" href="resources/css/wls.css"?>
+<?link rel="stylesheet" href="resources/css/bootstrap.css" ?>
+<zk>
+
+<window id="winlogin"  border="normal"
+position="center" closable="false"    sizable="false" mode="modal">
+<caption image="${labels.window_icon}" label="${labels.windows_title}" />
+
+   <hlayout>
+    <image src="${labels.img_usuario}"  id="img_usuario"/>
+    <textbox id="txtUsuario" width="200px" tooltiptext="${labels.txtUsuario_tooltiptext}" 
+    constraint="no empty"/>
+    </hlayout>
+    
+    <separator/>
+    
+    <hlayout>
+     <image src="${labels.img_pws}"  id="img_pws"/>
+    <textbox id="txtPws" multiline="false" type="password" width="200px" tooltiptext="${labels.txtPws_tooltiptext}" 
+    constraint="no empty"/>
+    </hlayout>
+    <separator/>
+    
+    <hlayout>
+     <image src="${labels.img_cia}" id="img_cia"/>  
+     <combobox id="cbbcia" tooltiptext="${labels.cbbcia_tooltiptext}"/>
+    </hlayout>   
+     <separator/>
+     
+     <div align="center">
+    <hlayout>    
+		<button id="btnok"     label="${labels.btnok_label}"      image="${labels.btnok_image}"/>
+    </hlayout>
+    </div>
+</window>
+<separator/>
+</zk>

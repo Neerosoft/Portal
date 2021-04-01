@@ -13,6 +13,83 @@
 	
 	<library-property>
     	<name>org.zkoss.theme.preferred</name>
-   		<value>sapphire</value> 
+   		<value>silvertail</value> 
 	</library-property>
+	
+	<system-config>
+	    <label-location>/WEB-INF/classes/portal/org/info/info.properties</label-location>
+	    <disable-event-thread>false</disable-event-thread>
+	</system-config>
+	
+	<!--
+	<library-property>
+		<name>org.zkoss.zul.Button.mold</name>
+		<value>bs</value>
+	</library-property>
+
+
+	<library-property>
+		<name>org.zkoss.zul.Menupopup.mold</name>
+		<value>bs</value>
+	</library-property>//-->
+	
+	
+	<library-property>
+		<name>org.zkoss.zkmax.zul.Navbar.mold</name>
+		<value>bs</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zul.Paging.mold</name>
+		<value>bs</value>
+	</library-property>
+	<library-property>
+		<name>org.zkoss.zul.Panel.mold</name>
+		<value>bs</value>
+	</library-property>
+	
+	<library-property>
+    <name>org.zkoss.zul.theme.fontSizeM</name>
+    <value>12px</value>
+	</library-property>
+	<library-property>
+    <name>org.zkoss.zul.theme.fontSizeS</name>
+    <value>10px</value>
+	</library-property>
+	<library-property>
+    <name>org.zkoss.zul.theme.fontSizeXS</name>
+    <value>9px</value>
+	</library-property>
+	
+	<library-property>
+                <name>org.zkoss.zkplus.databind.AnnotateDataBinderInit.compatible</name>
+                <value>true</value>
+    </library-property>
+    
+    <library-property>
+		<name>org.zkoss.zul.grid.rod</name>
+		<value>true</value>
+	</library-property>
+    
+    <library-property>
+    	<name>org.zkoss.zul.progressbox.position</name>
+    	<value>top, left</value>
+	</library-property>
+	
+	
+	 <client-config>
+     	<click-filter-delay>0</click-filter-delay>
+     	<debug-js>false</debug-js>
+    	<disable-behind-modal>false</disable-behind-modal>
+     <error-reload>
+         <device-type>ajax</device-type>
+         <error-code>301</error-code>
+         <reload-uri></reload-uri>
+     </error-reload>
+     
+     <keep-across-visits>true</keep-across-visits>
+     <processing-prompt-delay>900</processing-prompt-delay>
+     <tooltip-delay>800</tooltip-delay>
+     <resend-delay>9000</resend-delay>
+		
+	</client-config>
 </zk>

@@ -1,0 +1,7 @@
+<zk>
+<?page title="WLS"?> 
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+	<window border="none" id="winStart" apply="portal.org.driver.Index">
+	<button label="Saludar" id="btnSaludar"/>
+	</window>
+</zk>
