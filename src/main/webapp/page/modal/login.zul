@@ -6,32 +6,32 @@
 
 <window id="winlogin"  border="normal"
 position="center" closable="false"    sizable="false" mode="modal">
-<caption image="${labels.window_icon}" label="${labels.windows_title}" />
+<caption image="faces/resources/pic/Java.png" label="WLS Account" />
 
    <hlayout>
-    <image src="${labels.img_usuario}"  id="img_usuario"/>
-    <textbox id="txtUsuario" width="200px" tooltiptext="${labels.txtUsuario_tooltiptext}" 
+    <image src="faces/resources/pic/account.png"  id="img_usuario"/>
+    <textbox id="txtUsuario" width="200px" tooltiptext="Password" 
     constraint="no empty"/>
     </hlayout>
     
     <separator/>
     
     <hlayout>
-     <image src="${labels.img_pws}"  id="img_pws"/>
-    <textbox id="txtPws" multiline="false" type="password" width="200px" tooltiptext="${labels.txtPws_tooltiptext}" 
+     <image src="faces/resources/pic/mouse.png"  id="img_pws"/>
+    <textbox id="txtPws" multiline="false" type="password" width="200px" tooltiptext="Password" 
     constraint="no empty"/>
     </hlayout>
     <separator/>
     
     <hlayout>
-     <image src="${labels.img_cia}" id="img_cia"/>  
-     <combobox id="cbbcia" tooltiptext="${labels.cbbcia_tooltiptext}"/>
+     <image src="faces/resources/pic/home.png" id="img_cia"/>  
+     <combobox id="cbbcia" tooltiptext="Seleccione una empresa"/>
     </hlayout>   
      <separator/>
      
      <div align="center">
     <hlayout>    
-		<button id="btnok"     label="${labels.btnok_label}"      image="${labels.btnok_image}"/>
+		<button id="btnok"     label="Enviar"      image="faces/resources/pic/gancho.png"/>
     </hlayout>
     </div>
 </window>
