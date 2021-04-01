@@ -4,12 +4,17 @@
 	<groupId>portal.org.main</groupId>
 	<artifactId>Portal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
 		<zk.version>9.0.0</zk.version>
 		<commons-io>2.6</commons-io>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<packname>-${project.version}-FL-${maven.build.timestamp}</packname>
 	</properties>
+	
 	<packaging>war</packaging>
 	<name>The Portal Project</name>
 	<description>The Portal Project</description>
@@ -88,6 +93,31 @@
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
+		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-dependency-plugin</artifactId>
+   				<version>3.1.2</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.github.jsimone</groupId>
+									<artifactId>webapp-runner</artifactId>
+									<version>8.0.30.2</version>
+									<destFileName>webapp-runner.jar</destFileName>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		
+		
 			<!-- Run with Jetty -->
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
@@ -138,6 +168,8 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			
 		</plugins>
 	</build>
 </project>
