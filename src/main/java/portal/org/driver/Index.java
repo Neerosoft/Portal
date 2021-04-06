@@ -28,12 +28,13 @@ public class Index extends SelectorComposer<Component> {
 	
 	@AfterCompose 
   	public void init()throws UnsupportedEncodingException {
+		Executions.createComponents("page/modal/login.zul",null,null);
 	}
 	
 	
-	@Listen("onCreate=#winStart")
+	/*@Listen("onCreate=#winStart")
 	public void Login() {		  
 	        Executions.createComponents("page/modal/login.zul",null,null);
 		
-	}
+	}*/
 }
