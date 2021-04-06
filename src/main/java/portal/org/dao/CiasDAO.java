@@ -1,57 +1,51 @@
 package portal.org.dao;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
 
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.zkoss.zul.Messagebox;
-import portal.org.dblink.MyBatisConnectionFactory;
-import portal.org.main.LogConfig;
+import portal.org.connections.HSQLDBConnections;
 import portal.org.pojo.Cias;
-import org.apache.log4j.PropertyConfigurator;
-import org.apache.log4j.Logger;
-
-
 
 public class CiasDAO {
-	private final static Logger log = Logger.getLogger(CiasDAO.class);
-	private SqlSessionFactory sqlSessionFactory=null;
 	
+	private HSQLDBConnections hsqldb=null;
 
 	public CiasDAO() {
-		new LogConfig();
+		this.hsqldb=new HSQLDBConnections();		
+	}
+	public ArrayList<Cias>getAllCias(){
 		
-		log.warn("un warning");
-		log.error("un error");
+		ArrayList<Cias>cias=new ArrayList<Cias>();
+		String sqlCommander="select * from v_cia order by namecia";
+		Connection con=null;
+		Statement orden=null;
+		ResultSet salida=null;
 		
-		this.sqlSessionFactory=MyBatisConnectionFactory.getSqlSessionFactory();
+		try {
+			con=hsqldb.getConnection();			
+			orden=con.createStatement();
+			salida=orden.executeQuery(sqlCommander);
+			while(salida.next()) {
+				Cias c=new Cias();
+				c.setIdcia(salida.getString("IDCIA"));
+				c.setNamecia(salida.getString("NAMECIA"));
+				c.setActivo(salida.getBoolean("ACTIVO"));
+				c.setDir1(salida.getString("DIR1"));
+				c.setTel(salida.getString("TEL"));
+				
+				cias.add(c);
+			}
+			
+		}
+		catch(Exception e) {
+			System.out.println("Error al consultar la tabla cia");
+			e.printStackTrace();
+		}
+		return cias;
 		
 	}
 	
-
-	public ArrayList<Cias>Nombre_Cias(){
-		List<Cias>nombre_cias=new ArrayList<Cias>() ;
-		nombre_cias.clear();
-		SqlSession session=sqlSessionFactory.openSession();
-		log.warn("Se obtiene la session");
-		try {			
-			//nombre_cias=(ArrayList<Cias>)session.selectList("Cias.v_cias");
-			nombre_cias=session.selectList("Cias.v_cias");
-			log.warn("se ejecuta la consulta");
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-			Messagebox.show("Error al obtener la lista de compañias :"+e,"WLS", Messagebox.OK, Messagebox.INFORMATION);
-		}
-		finally {
-			session.close();
-		}	
-	//	System.out.println("Nombre_Cias()-->"+nombre_cias+"\n");
-		log.warn("Nombre_Cias()-->"+nombre_cias+"\n");
-		return (ArrayList<Cias>) nombre_cias;
-		
-	}
 
 }

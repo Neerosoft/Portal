@@ -52,7 +52,7 @@ public class Login extends SelectorComposer<Component>  {
 		
 		ArrayList<Cias>cias=null;		
 		try {
-			cias=dao.Nombre_Cias();
+			cias=dao.getAllCias();
 			this.cbbcia.getItems().clear();
 			for(Cias c:cias) {
 				this.cbbcia.appendItem(c.getNamecia());
