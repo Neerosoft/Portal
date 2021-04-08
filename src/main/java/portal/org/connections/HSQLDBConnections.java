@@ -8,11 +8,13 @@ public class HSQLDBConnections {
 	  private Connection con = null;
 	  private String driver = "org.hsqldb.jdbcDriver";
 	  private String puente = "jdbc:hsqldb:hsql://";
-	  private String u = "SA";
-	  private String p = "RAPTOR";
 	  private String hostname = "64.91.249.118";
-	  private String db = "raptor";
 	  private String port="9001";
+	  private String db = "raptor";
+	  private String u = "SA";
+	  private String p = "RAPTOR";	  
+	  
+	  
 	  
 
 	public HSQLDBConnections() {

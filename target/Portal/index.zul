@@ -1,0 +1,52 @@
+<zk>
+<?page title="WLS Web System"?> 
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+<?link rel="stylesheet" href="faces/resources/css/wls.css"?>
+<?link rel="stylesheet" href="faces/resources/css/bootstrap.css" ?>
+<?link rel="shortcut icon" type="image/x-icon" href="faces/resources/pic/java.ico"?>
+<?script src="faces/resource/js/html5shiv.js" if="${zk.ie < 9}" ?>
+<?script src="faces/resource/js/respond.min.js" if="${zk.ie < 9}"?>
+<style>
+body{
+/* background-image:url('resources/pic/cristina.jpg'); background-color: #cfcfcf */
+ /*background-image:url('resources/pic/calibri.jpg');*/
+ height: 100%;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+</style>
+<borderlayout  id="portal"  visible="true"  
+viewModel="@id('vm') @init('portal.org.driver.Index')" >
+
+ 	<north border="normal" style="background-color: #b6e1ea;" visible="false">         
+	</north>
+        
+ 	<center border="normal" autoscroll="true"   style=" background-image:url('faces/resources/pic/cristina.jpg');background-repeat: no-repeat; background-size: cover;" id="leaf">         
+		<tabbox id="tabs" height="100%">
+    		<tabs height="100%"/>
+    		<tabpanels/>    
+ 		</tabbox>
+ 		        
+	</center>   
+	<west  border="none" id="menu" visible="false"  splittable="true"
+		    collapsible="true" title="Menu" style="background-color: #ffffff;">
+				<tabbox id="tabsmenu" height="100%" mold="accordion">
+    				<tabs height="100%"/>
+    				<tabpanels/>    
+ 				</tabbox>				
+	</west>
+     
+	<south border="normal" style="background-color: #b6e1ea;"  visible="false">  
+	
+	<toolbar id="tb" align="end" visible="true">
+            <toolbarbutton image="resources/pic/Java.png" onClick='alert("Java")' />
+            <toolbarbutton image="resources/pic/usuario.png" onClick='alert("Issue")' />
+            <toolbarbutton image="resources/pic/mouse.png" onClick='alert("Internet")' />
+            <toolbarbutton image="resources/pic/home.png" onClick='alert("Volume")' />
+            <toolbarbutton label="12:55 PM" onClick='alert("Time")' />
+        </toolbar>     
+	</south>   
+         	
+  </borderlayout>
+</zk>

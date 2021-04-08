@@ -3,8 +3,13 @@ package portal.org.driver;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
+import portal.org.pojo.V_Login;
 import org.zkoss.bind.annotation.AfterCompose;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Execution;
+import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.Wire;
@@ -14,8 +19,9 @@ import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
 import portal.org.dao.CiasDAO;
+import portal.org.dao.Access;
 import portal.org.pojo.Cias;
-
+import portal.org.session.WLSession;
 
 public class Login extends SelectorComposer<Component>  {
 
@@ -29,10 +35,14 @@ public class Login extends SelectorComposer<Component>  {
 	@Wire
 	private Textbox txtUsuario,txtPws;
 	
-	private CiasDAO dao=new CiasDAO();
+	private CiasDAO dao;
+	private Access ac;
+	private WLSession sesion=null;
 	
 	public Login() {
-		
+		this.dao=new CiasDAO();
+		this.ac=new Access();
+		this.sesion=new WLSession();
 	}
 	
 	@Override
@@ -74,9 +84,39 @@ public class Login extends SelectorComposer<Component>  {
 			Messagebox.show("Disculpe!. Ingrese sus datos de usuario WLS","WLS", Messagebox.OK, Messagebox.INFORMATION);	
 		}
 		else {
-			Messagebox.show("webapp esta en proceso de construccion","WLS", Messagebox.OK, Messagebox.INFORMATION);
+			getUsuario();
 			
 		}
+		
+	}
+	private void getUsuario() {
+		ArrayList<V_Login>usuario=null;
+		boolean estatus=false;
+		
+		System.out.println(txtUsuario.getValue()+"   "+txtPws.getValue()+"   "+cbbcia.getText());
+		usuario=this.ac.doLogin(this.txtUsuario.getValue(),this.txtPws.getValue(), this.cbbcia.getText());
+		if(usuario.size()==0) {
+			Messagebox.show("Disculpe!. El usuario indicado no existe.\nVerifique sus datos y vuelva a intentar","WLS", Messagebox.OK, Messagebox.ERROR);	
+			
+		}
+		else {
+			estatus=sesion.SalvarUsuarioEnSession(usuario);
+			if(estatus==true) {
+				Messagebox.show("Bienvenido "+usuario.get(0).getNombre()+"  "+usuario.get(0).getApellido(),"WLS", Messagebox.OK, Messagebox.INFORMATION);
+				this.winlogin.detach();
+				
+				Execution exe=Executions.getCurrent();			
+	    		HttpSession session = (HttpSession)(Executions.getCurrent()).getDesktop().getSession().getNativeSession();
+	    		exe.sendRedirect("/");
+			}
+			else {
+				Messagebox.show("Disculpe!. Error al momento de obtner la session\nRemita a Sistemas","WLS", Messagebox.OK, Messagebox.ERROR);
+			}
+			
+		}
+		
+		
+		
 		
 	}
 

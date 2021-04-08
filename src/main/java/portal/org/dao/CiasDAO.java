@@ -38,6 +38,10 @@ public class CiasDAO {
 				cias.add(c);
 			}
 			
+			salida.close();		
+			hsqldb.close(con);
+			
+			
 		}
 		catch(Exception e) {
 			System.out.println("Error al consultar la tabla cia");
