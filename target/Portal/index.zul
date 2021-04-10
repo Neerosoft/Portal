@@ -19,7 +19,10 @@ body{
 <borderlayout  id="portal"  visible="true"  
 viewModel="@id('vm') @init('portal.org.driver.Index')" >
 
- 	<north border="normal" style="background-color: #b6e1ea;" visible="false">         
+ 	<north border="normal" style="background-color: #b6e1ea;" visible="false" id="norte">   
+ 		  <toolbar id="tb" align="end" visible="true">           
+            <toolbarbutton id="tbUsuario" image="faces/resources/pic/usuario.png"  visible="true"/>            
+        </toolbar>      
 	</north>
         
  	<center border="normal" autoscroll="true"   style=" background-image:url('faces/resources/pic/cristina.jpg');background-repeat: no-repeat; background-size: cover;" id="leaf">         
@@ -37,15 +40,9 @@ viewModel="@id('vm') @init('portal.org.driver.Index')" >
  				</tabbox>				
 	</west>
      
-	<south border="normal" style="background-color: #b6e1ea;"  visible="false">  
+	<south border="normal" style="background-color: #b6e1ea;"  visible="false" id="sur">  
 	
-	<toolbar id="tb" align="end" visible="true">
-            <toolbarbutton image="resources/pic/Java.png" onClick='alert("Java")' />
-            <toolbarbutton image="resources/pic/usuario.png" onClick='alert("Issue")' />
-            <toolbarbutton image="resources/pic/mouse.png" onClick='alert("Internet")' />
-            <toolbarbutton image="resources/pic/home.png" onClick='alert("Volume")' />
-            <toolbarbutton label="12:55 PM" onClick='alert("Time")' />
-        </toolbar>     
+	   
 	</south>   
          	
   </borderlayout>

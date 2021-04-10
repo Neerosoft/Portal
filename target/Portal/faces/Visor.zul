@@ -1,0 +1,14 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" title="SandBox"?>
+<zk>
+
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+<?link rel="stylesheet" href="faces/resources/css/wls.css"?>
+<?link rel="stylesheet" href="faces/resources/css/bootstrap.css" ?>
+<?link rel="shortcut icon" type="image/x-icon" href="faces/resources/pic/java.ico"?>
+<?script src="faces/resource/js/html5shiv.js" if="${zk.ie < 9}" ?>
+<?script src="faces/resource/js/respond.min.js" if="${zk.ie < 9}"?>
+
+<window title="" border="none">
+
+</window>
+</zk>
