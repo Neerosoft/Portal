@@ -9,7 +9,7 @@
 
 <window title="" border="none" apply="portal.org.driver.Visor" id="winvisor">
 
-<div align="center" >
+<div align="center" with="100%">
 <hlayout id="hcontrol">
 	<label value="Selecione un campo" />
 	<combobox value="category" id="cbbCampo">		
