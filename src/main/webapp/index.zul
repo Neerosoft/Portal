@@ -8,12 +8,13 @@
 <?script src="faces/resource/js/respond.min.js" if="${zk.ie < 9}"?>
 <style>
 body{
-/* background-image:url('resources/pic/cristina.jpg'); background-color: #cfcfcf */
- /*background-image:url('resources/pic/calibri.jpg');*/
+/* background-image:url('faces/resources/pic/cristina.jpg'); background-color: #cfcfcf */
+ /*background-image:url('faces/resources/pic/calibri.jpg');*/
  height: 100%;
  background-position: center;
  background-repeat: no-repeat;
  background-size: cover;
+ /* */
 }
 </style>
 <borderlayout  id="portal"  visible="true"  
@@ -21,29 +22,24 @@ viewModel="@id('vm') @init('portal.org.driver.Index')" >
 
  	<north border="normal" style="background-color: #b6e1ea;" visible="false" id="norte">   
  		  <toolbar id="tb" align="end" visible="true">           
-            <toolbarbutton id="tbUsuario" image="faces/resources/pic/usuario.png"  visible="true"/>            
-        </toolbar>      
+           <toolbarbutton id="tbUsuario" image="faces/resources/pic/usuario.png"  visible="true"/>            
+        </toolbar>  
+
 	</north>
         
- 	<center border="normal" autoscroll="true"   style=" background-image:url('faces/resources/pic/cristina.jpg');background-repeat: no-repeat; background-size: cover;" id="leaf">         
-		<tabbox id="tabs" height="100%">
-    		<tabs height="100%"/>
-    		<tabpanels/>    
- 		</tabbox>
- 		        
-	</center>   
+<center border="normal" autoscroll="true"   
+style=" background-image:url('faces/resources/pic/cosmos.jpg');background-repeat: no-repeat; background-size: cover;" id="leaf">    
+ 		
+ 		
+</center>   
 	<west  border="none" id="menu" visible="false"  splittable="true"
 		    collapsible="true" title="Menu" style="background-color: #ffffff;">
-				<tabbox id="tabsmenu" height="100%" mold="accordion">
-    				<tabs height="100%"/>
-    				<tabpanels/>    
- 				</tabbox>				
+			  		
 	</west>
      
-	<south border="normal" style="background-color: #b6e1ea;"  visible="false" id="sur">  
-	
-	   
+	<south border="normal" style="background-color: #b6e1ea;"  visible="false" id="sur">  	   
 	</south>   
          	
   </borderlayout>
+                 
 </zk>

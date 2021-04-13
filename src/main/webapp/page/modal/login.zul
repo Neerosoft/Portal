@@ -36,5 +36,6 @@ position="center" closable="false"    sizable="false" mode="modal" apply="portal
     
     </div>
 </window>
+ 	<audio id="audiosound" src="faces/resources/media/XPlanet.mp3" height="10px" width="10px" visible="true" autoplay="true"/>  
 <separator/>
 </zk>

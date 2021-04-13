@@ -63,16 +63,14 @@ public class Index extends SelectorComposer<Component> {
 	}
 	
 	@AfterCompose 
-  	public void init( @SelectorParam("#tabs") Tabbox tabs,@SelectorParam("#tabsmenu") Tabbox tabsmenu,
-	    	@SelectorParam("#menu") West menu,
+  	public void init(@SelectorParam("#menu") West menu,
 	    	@SelectorParam("#portal") Borderlayout portal,
 	    	@SelectorParam("#tb")Toolbar tb,
 	    	@SelectorParam("#tbUsuario")Toolbarbutton tbUsuario,
 	    	@SelectorParam("#norte")North norte,
 	    	@SelectorParam("#sur")South sur)throws UnsupportedEncodingException {	
 		
-		this.tabs = tabs;
-        this.tabsmenu=tabsmenu;
+		
         this.menu=menu;
         this.portal=portal;	
         this.tb=tb;

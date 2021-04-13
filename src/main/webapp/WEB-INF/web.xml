@@ -4,8 +4,21 @@
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"> 
 
-	<description><![CDATA[My ZK Application]]></description>
+	<description>Proyecto Apsara</description>
 	<display-name>Portal</display-name>
+	
+	<!-- Filtro para evitar el acceso a no autorizados -->
+	
+	<!--
+  	<filter>
+  		<filter-name>Filtro</filter-name>
+  		<filter-class>portal.org.filtro.Filtro</filter-class>
+  </filter>  
+  <filter-mapping>
+  		<filter-name>Filtro</filter-name>
+  		<url-pattern>/resources/</url-pattern>  		
+  </filter-mapping>
+  //-->
 
 	<!-- //// -->
 	<!-- ZK -->
@@ -191,7 +204,6 @@
 	</mime-mapping>
 
 	<welcome-file-list>
-		<welcome-file>faces/Visor.zul</welcome-file>
-		
+		<welcome-file>index.zul</welcome-file>		
 	</welcome-file-list>
 </web-app>
