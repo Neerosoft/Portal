@@ -23,5 +23,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Anel/eclipse-workspace/ZKs/ZKReleases/zk-bin-9.0.0.1/zk-bin-9.0.0.1/dist/lib/zk.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

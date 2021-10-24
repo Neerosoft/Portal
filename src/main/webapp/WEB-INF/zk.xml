@@ -10,11 +10,12 @@
 	</preference>
 	-->
 <!-- or silvertail, atlantic, deepsea, gardensalad,sapphire,iceblue etc. -->
-	
+
 	<library-property>
     	<name>org.zkoss.theme.preferred</name>
    		<value>silvertail</value> 
 	</library-property>
+	
 	
 	<system-config>
 	    <label-location>/WEB-INF/classes/portal/org/info/info.properties</label-location>
