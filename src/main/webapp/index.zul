@@ -1,5 +1,5 @@
 <zk>
-<?page title="RM-Alain Cedeño JR"?> 
+<?page title="System X"?> 
 <?meta name="viewport" content="width=device-width, initial-scale=1"?>
 <?link rel="stylesheet" href="faces/resources/css/wls.css"?>
 <?link rel="stylesheet" href="faces/resources/css/bootstrap.css" ?>
@@ -10,7 +10,7 @@
 <style>
 body{
 /* background-image:url('faces/resources/pic/cristina.jpg'); background-color: #cfcfcf */
- background-image:url('faces/resources/pic/rm.jpeg');
+ background-image:url('faces/resources/pic/calibri.jpg');
  height: 100%;
  width:100%; 
  background-position: center;
@@ -39,7 +39,7 @@ viewModel="@id('vm') @init('portal.org.driver.Index')"  width="100%">
 </north>
         
 <center border="normal" autoscroll="true"
-style=" background-image:url('faces/resources/pic/rm.jpeg');background-repeat: no-repeat; background-size: cover;
+style=" background-image:url('faces/resources/pic/calibri.jpg.jpeg');background-repeat: no-repeat; background-size: cover;
 background-position: center;height: 100%;width:100%" id="leaf"> 			
   <div align="right">
  <button label="" id="btnSalir" image="faces/resources/pic/account.png" />
