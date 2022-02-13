@@ -1,0 +1,31 @@
+<?page title="∫eosxdx WS" contentType="text/html;charset=UTF-8"?>
+<?link rel="shortcut icon" type="image/x-icon" href="resources/pic/java.ico" ?>
+<?link rel="stylesheet" href="resources/css/wls.css"?>
+<?link rel="stylesheet" href="resources/css/bootstrap.css" ?>
+<zk>
+
+<window id="winlogin"  border="normal"
+position="center" closable="false"    sizable="false" mode="modal" apply="portal.org.driver.NoActivo">
+
+<tabbox height="100%" width="100%" mold="accordion">
+	<tabs>
+		<tab label="RMWS" />
+		
+	</tabs>
+	<tabpanels>
+		<tabpanel>
+		SU USUARIO NO ESTA HABILITADO. DEPENDE DE LOS ADMINISTRADORES  DE LA PAGINA RM QUE LE CONCEDAN LOS PERMISOS PARA EL USO DE LA APLICACIÓN.
+		POR MOTIVOS DE CONTROL DE ACCESO Y USO DE LA INFORMACIÓN AUTOMATIZADA TODOS LOS USUARIOS AUTOCREADOS ESTAN EN ESTATUS INACTIVO POR LO CUAL
+		CUALQUIER INTENTO DE ACCEDER SERA DENEGADO. SI REALMENTE NECESITA EL ACCESO A ESTOS DATOS FAVOR CONTACTAR CON LOS ADMINISTRADORES DE LA APLICACIÓN.
+		AGRADEMOS SU ATENCIÓN. 
+		<separator/>
+		<div align="center">
+		<button label="OK"  image="faces/resources/pic/home.png" id="btnOk"/>
+		</div>
+		
+		</tabpanel>
+		
+	</tabpanels>
+</tabbox>
+</window>
+</zk>

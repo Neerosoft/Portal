@@ -10,7 +10,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+//import javax.servlet.http.HttpSession;
 
 public class Filtro implements Filter{
 
@@ -27,14 +27,14 @@ public class Filtro implements Filter{
 		
 		HttpServletRequest req=null;
 		HttpServletResponse res=null;
-		HttpSession sesion;
+		//HttpSession sesion;
 	
 		try {
 		
 		
 		req=(HttpServletRequest)request;
 		res=(HttpServletResponse)response;
-		sesion=req.getSession();
+		//sesion=req.getSession();
 	
 			
 			System.out.println("la url    "+req.getRequestURL());

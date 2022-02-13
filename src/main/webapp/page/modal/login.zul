@@ -1,38 +1,42 @@
-<?page title="SystemX" contentType="text/html;charset=UTF-8"?>
+<?page title="∫eosxdx WS" contentType="text/html;charset=UTF-8"?>
 <?link rel="shortcut icon" type="image/x-icon" href="resources/pic/java.ico" ?>
 <?link rel="stylesheet" href="resources/css/wls.css"?>
 <?link rel="stylesheet" href="resources/css/bootstrap.css" ?>
 <zk>
 
 <window id="winlogin"  border="normal"
-position="center" closable="false"    sizable="false" mode="modal" apply="system.x.driver.Login">
-<caption image="faces/resources/pic/Java.png" label="SystemX" />
+position="center" closable="false"    sizable="false" mode="modal" apply="portal.org.driver.Login">
+
+<caption image="faces/resources/pic/Java.png" label="RMWS" />
 
    <hlayout>
     <image src="faces/resources/pic/account.png"  id="img_usuario"/>
-    <textbox id="txtUsuario" width="200px" tooltiptext="Password" 
-    constraint="no empty"/>
+    <textbox id="txtUsuario" width="200px" tooltiptext="usuario" />
+    
+    </hlayout>
+    
+    <separator/>
+    <hlayout id="hmail" visible="false">
+    <image src="faces/resources/pic/mail.png"  id="img_mail"/>
+    <textbox id="txtEmail" width="200px" tooltiptext="usuario" />
     </hlayout>
     
     <separator/>
     
     <hlayout>
      <image src="faces/resources/pic/mouse.png"  id="img_pws"/>
-    <textbox id="txtPws" multiline="false" type="password" width="200px" tooltiptext="Password" 
-    constraint="no empty"/>
+    <textbox id="txtPws" multiline="false" type="password" width="200px" tooltiptext="Password" />
     </hlayout>
     <separator/>
-    
-    
-     <separator/>
+   
      
-     <div align="center">
+    <div align="center">
     <hlayout>    
-		<button id="btnok"     label="Enviar"      image="faces/resources/pic/gancho.png"/>		
+		<button id="btnok"     label="Enviar"      image="faces/resources/pic/gancho.png"/>				
     </hlayout>
     
     </div>
 </window>
- 	<audio id="audiosound" src="faces/resources/media/XPlanet.mp3" height="10px" width="10px" visible="true" autoplay="true"/>  
+ 	 
 <separator/>
 </zk>

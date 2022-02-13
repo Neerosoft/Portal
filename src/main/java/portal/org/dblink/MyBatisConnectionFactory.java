@@ -10,7 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.log4j.Logger;
 
-import portal.org.dao.CiasDAO;
+import portal.org.dao.CombosDAO;
 import portal.org.main.LogConfig;
 
 /**
@@ -18,17 +18,17 @@ import portal.org.main.LogConfig;
  *
  */
 public class MyBatisConnectionFactory {
-private final static Logger log = Logger.getLogger(CiasDAO.class);
+//private final static Logger log = Logger.getLogger(CombosDAO.class);
 	
 private static SqlSessionFactory sqlSessionFactory;
 	
 	static {
 		try {			
-			new LogConfig();
-			String resource="portal/org/dblink/config.xml";
-			log.warn(resource);
+			//new LogConfig();
+			String resource="config.xml";
+			//log.warn(resource);
 			Reader reader=Resources.getResourceAsReader(resource);
-			log.warn("reader esta "+reader.ready());
+			//log.warn("reader esta "+reader.ready());
 			
 			if(sqlSessionFactory==null) {
 				sqlSessionFactory=new SqlSessionFactoryBuilder().build(reader);

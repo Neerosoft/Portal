@@ -1,22 +1,71 @@
 package portal.org.session;
 import java.util.ArrayList;
-
+import java.util.HashMap;
 import javax.servlet.http.HttpSession;
-
-import org.zkoss.zk.ui.Execution;
 import org.zkoss.zk.ui.Executions;
 
-import portal.org.pojo.V_Login;
+import portal.org.pojo.PLogin;
+
 
 
 
 public class WLSession {
 	
 	private HttpSession objsesion=null;
-
+	private HttpSession session;
+	private String idusr;
+	private String name;
+	private String email;
+	private String prf;
+	private String act;
+	private String perfil;
+	
+	
+	
 	public WLSession() {
-
+		
 	}
+
+	public String getIdusr() {
+		HttpSession session;
+		session=this.getSession();
+		return session.getAttribute("idusr").toString();
+	}
+	public String getName() {
+		HttpSession session;
+		session=this.getSession();
+		return session.getAttribute("name").toString();
+	}
+	public String getEmail() {
+		HttpSession session;
+		session=this.getSession();
+		return session.getAttribute("email").toString();
+	}
+	public String getPrf() {
+		HttpSession session;
+		session=this.getSession();
+		return session.getAttribute("prf").toString();
+	}
+	public String getAct() {
+		HttpSession session;
+		session=this.getSession();
+		return session.getAttribute("act").toString();
+	}
+	public HttpSession getObjsesion() {
+		return objsesion;
+	}
+	public void setObjsesion(HttpSession objsesion) {
+		this.objsesion = objsesion;
+	}
+	
+	
+	
+	public String getPerfil() {
+		HttpSession session;
+		session=this.getSession();
+		return session.getAttribute("perfil").toString();
+	}
+
 	public HttpSession getSession() {
 		try {
 		this.objsesion = (HttpSession)(Executions.getCurrent()).getDesktop().getSession().getNativeSession();
@@ -30,26 +79,24 @@ public class WLSession {
 	}
 	
 	    
-	public boolean SalvarUsuarioEnSession(ArrayList<V_Login>d) {
+	public boolean SalvarUsuarioEnSession(ArrayList<PLogin>mapa) {
 		boolean flag=false;
-		try {
+		try {	
+		session=this.getSession();
+		session.setAttribute("idusr",mapa.get(0).getIdprf());
+		session.setAttribute("name",mapa.get(0).getName());
+		session.setAttribute("email",mapa.get(0).getEmail());
+		session.setAttribute("prf",mapa.get(0).getIdprf());
+		session.setAttribute("act",mapa.get(0).isAct());
+		session.setAttribute("perfil",mapa.get(0).getPrfnm());
 		
-		HttpSession session=this.getSession();
-		
-		session.setAttribute("idusr",d.get(0).getIdusr());
-		session.setAttribute("namecia",d.get(0).getNamecia());
-		session.setAttribute("usuario",d.get(0).getUsuario());
-		session.setAttribute("pws",d.get(0).getPws());
-		session.setAttribute("nombre",d.get(0).getNombre());
-		session.setAttribute("apellido",d.get(0).getApellido());
-		session.setAttribute("activo",d.get(0).getActivo());
-	
-		
+			
 		flag=true;
 		System.out.println("\n-->Datos Salvados en session\n");
 		}
 		catch(Exception e) {
-			System.out.println("Error en Salvar los datos de Usuarios en Session ");
+			System.out.println("Error en Salvar los datos de Usuarios en Session "+e);
+			e.printStackTrace();
 			flag=false;
 			
 		}
@@ -81,8 +128,8 @@ public class WLSession {
 		String usuario="";
 		try {
 			session=this.getSession();
-			usuario=session.getAttribute("usuario").toString();
-			System.out.println("usuario e sesion  "+usuario);
+			usuario=session.getAttribute("name").toString();
+		    System.out.println("usuario en sesion  "+usuario);
 			if(usuario.isEmpty()||usuario.equals("")||usuario.equals(null)) {
 				bandera=false;
 			}

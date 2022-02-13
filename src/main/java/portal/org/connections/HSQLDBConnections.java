@@ -21,6 +21,7 @@ public class HSQLDBConnections {
 		
 	}
 	
+	@SuppressWarnings("deprecation")
 	public Connection getConnection(){
 	    try
 	    {

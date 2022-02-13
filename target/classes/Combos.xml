@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+
+  <mapper namespace="Combos">  	
+  	
+  	<select id="prov" resultType="pojoprov">
+  		select * from rm.vprov;
+  	</select> 
+  	
+  	 <select id="dst" resultType="pojodst">
+  		select * from rm.vdst;
+  	</select> 
+  	
+  	 <select id="crr" resultType="pojocrr">
+  		select * from rm.vcrr;
+  	</select> 
+  	
+  	<select id="data" resultType="pojodata" parameterType="java.util.Map">
+  		select * from rm.vdata where corregimiento=#{crr};
+  	</select> 
+  	 
+  	<select id="byNombre" resultType="pojodata" parameterType="java.util.Map"  statementType="CALLABLE">    	
+        <![CDATA[ 
+        call rm.fsearch(
+        #{param,mode=IN,jdbcType=VARCHAR});
+        ]]> 		
+  	</select> 	
+  	
+  	<select id="byCedula" resultType="pojodata" parameterType="java.util.Map">   		
+  		select * from rm.vdata where cedula= #{param};  		
+  	</select>
+  	 
+  	<!--Login-->
+  	 <select id="login" resultType="pojologin" parameterType="java.util.Map">  		
+  		select * from rm.vusuarios where name=#{usuario} and pws=#{pws};
+  	</select>
+  	
+  	<!--Resgitro de Usuarios-->
+  	<select id="crear"  parameterType="java.util.Map"  statementType="CALLABLE" useCache="false">    	
+        <![CDATA[ 
+        call rm.sp_usuarios(
+        #{op,mode=IN,jdbcType=VARCHAR},
+        #{pidusr,mode=IN,jdbcType=VARCHAR},
+        #{pname,mode=IN,jdbcType=VARCHAR},
+        #{pemail,mode=IN,jdbcType=VARCHAR},
+        #{ppws,mode=IN,jdbcType=VARCHAR},
+        #{pact,mode=IN,jdbcType=VARCHAR},
+        #{pprfnm,mode=IN,jdbcType=VARCHAR}
+        );
+        ]]> 		
+  	</select> 
+  	
+  	<!--Actualizacion de Status de Usuarios-->
+  	 <update id = "updateStatus" parameterType="java.util.Map">
+  	   update rm.usuarios set act=#{act} where idusr=#{idusr}     
+  	 </update>
+  	 
+  	 <!--Actualizacion de Status de Perfil-->
+  	 <update id = "updatePerfil" parameterType="java.util.Map">
+  	   update rm.usuarios set idprf=#{idprf} where idusr=#{idusr}     
+  	 </update>
+  	 
+  	 <!--Actualizacion de Perfil de Usuarios-->
+  	 <select id="idperfil" parameterType="String" resultType="int">  		
+  		select idprf from rm.vprf where prfnm=#{prfnm};
+  	</select>
+  	 
+  	
+  	 <select id="usuarios" resultType="pojousuarios">  		
+  		select * from rm.vusuarios;
+  	</select>  	
+  	 	
+  </mapper>

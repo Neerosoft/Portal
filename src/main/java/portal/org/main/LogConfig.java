@@ -6,6 +6,7 @@ public class LogConfig {
 
 	
 	public  LogConfig() {		
+			@SuppressWarnings("unused")
 			Properties  props=new Properties();
 			try {			
 				PropertyConfigurator.configure(this.getClass().getResource("/portal/org/info/log4j.properties"));

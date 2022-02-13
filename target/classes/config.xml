@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD//Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+<properties resource="credenciales.properties"/>  
+
+	<typeAliases>
+		<typeAlias alias="pojoprov" type="portal.org.pojo.PProvincia"/>
+		<typeAlias alias="pojodst" type="portal.org.pojo.PDistrito"/>
+		<typeAlias alias="pojocrr" type="portal.org.pojo.PCrr"/>
+		<typeAlias alias="pojodata" type="portal.org.pojo.PData"/>
+		<typeAlias alias="pojologin" type="portal.org.pojo.PLogin"/>
+		<typeAlias alias="pojousuarios" type="portal.org.pojo.PUsuarios"/>
+  	</typeAliases> 
+
+  
+
+<environments default="development">
+<environment id="development">
+<transactionManager type="JDBC"/>	
+
+<dataSource type="POOLED">
+<property name="driver"	 		value="${driver}"/>
+<property name="url" 			value="${puente}${server}:${port}/${db}"/>
+<property name="username" 		value="${usuario}"/>
+<property name="password" 		value="${pws}"/>	
+
+
+</dataSource>
+</environment>
+</environments>
+
+<mappers>
+	<mapper resource="Combos.xml"/>
+</mappers>
+
+ 
+</configuration>

@@ -1,45 +1,60 @@
 <zk>
-<?page title="SystemX"?> 
+<?page title="RM-Alain Cedeño JR"?> 
 <?meta name="viewport" content="width=device-width, initial-scale=1"?>
 <?link rel="stylesheet" href="faces/resources/css/wls.css"?>
 <?link rel="stylesheet" href="faces/resources/css/bootstrap.css" ?>
 <?link rel="shortcut icon" type="image/x-icon" href="faces/resources/pic/java.ico"?>
 <?script src="faces/resource/js/html5shiv.js" if="${zk.ie < 9}" ?>
 <?script src="faces/resource/js/respond.min.js" if="${zk.ie < 9}"?>
+
 <style>
 body{
 /* background-image:url('faces/resources/pic/cristina.jpg'); background-color: #cfcfcf */
- /*background-image:url('faces/resources/pic/calibri.jpg');*/
+ background-image:url('faces/resources/pic/rm.jpeg');
  height: 100%;
+ width:100%; 
  background-position: center;
  background-repeat: no-repeat;
  background-size: cover;
  /* */
 }
 </style>
+<window id="winPadron" border="none" closable="true"  width="100%" contentStyle="overflow:auto;" height="100%"
+apply="portal.org.driver.Index">
 <borderlayout  id="portal"  visible="true"  
-viewModel="@id('vm') @init('system.x.driver.Index')" >
+viewModel="@id('vm') @init('portal.org.driver.Index')"  width="100%">
 
- 	<north border="normal" style="background-color: #b6e1ea;" visible="false" id="norte">   
- 		  <toolbar id="tb" align="end" visible="true">           
-           <toolbarbutton id="tbUsuario" image="faces/resources/pic/usuario.png"  visible="true"/>            
-        </toolbar>  
-
-	</north>
+<north border="normal"  visible="true" id="norte">    		   
+        <menubar id="menubar" hflex="min" visible="true">		
+		<menu label="Archivo" image="faces/resources/pic/m1.gif" id="mnPadron">
+			<menupopup>
+				<menuitem label="Circuito 8-10"  image="faces/resources/pic/16.png"  id="1"/>	
+				<menuitem label="Buscar" id="2" image="faces/resources/pic/buscar.png" />
+				<menuitem label="Usuarios" id="3" image="faces/resources/pic/usuario.png" />					
+				<menuitem label="Acerca" id="4" image="faces/resources/pic/m2.gif" />	
+							
+			</menupopup>
+		</menu>		
+	</menubar>
+</north>
         
-<center border="normal" autoscroll="true"   
-style=" background-image:url('faces/resources/pic/cosmos.jpg');background-repeat: no-repeat; background-size: cover;" id="leaf">    
- 		
- 		
+<center border="normal" autoscroll="true"
+style=" background-image:url('faces/resources/pic/rm.jpeg');background-repeat: no-repeat; background-size: cover;
+background-position: center;height: 100%;width:100%" id="leaf"> 			
+  <div align="right">
+ <button label="" id="btnSalir" image="faces/resources/pic/account.png" />
+  </div>
 </center>   
-	<west  border="none" id="menu" visible="false"  splittable="true"
-		    collapsible="true" title="Menu" style="background-color: #ffffff;">
-			  		
-	</west>
+
+<west  border="none" id="menu" visible="false"  splittable="true"
+		    collapsible="true" title="Menu" >
+		    				
+</west>
      
-	<south border="normal" style="background-color: #b6e1ea;"  visible="false" id="sur">  	   
-	</south>   
-         	
-  </borderlayout>
-                 
+<south border="normal" style="background-color: #b6e1ea;"  visible="false" id="sur"> 
+</south>   
+</borderlayout>
+
+</window>
+           
 </zk>

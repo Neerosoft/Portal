@@ -1,0 +1,53 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" root="./winUsrs"?>
+<?link rel="shortcut icon" type="image/x-icon" href="resources/pic/java.ico" ?>
+<?meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/?>
+<zk>
+
+<window id="winUsrs"  border="normal"
+position="center" closable="true"    sizable="false" mode="modal"
+style="opacity: 0.8;font-size:8pt" height="100%" width="100%" minimizable="false" maximizable="false"
+contentStyle="overflow:auto;" apply="portal.org.driver.Usuarios">
+
+<caption image="faces/resources/pic/usuario.png" label="Usuarios" style="font-size:8pt" />
+
+<toolbar id="toolbar">
+	<button label="Load Users"  image="faces/resources/pic/usuario.png" id="btnLoad" style="font-size:8pt"/>
+
+</toolbar>
+
+<grid id="griddata" visible="true" emptyMessage="NO SE ENCONTRARON REGISTROS"  mold="paging" pagingPosition="both" style="overflow: scroll;" width="100%">
+		<columns sizable="true">
+			<column label="idusr"  id="col1" width="40px" />
+			<column label="nm"   id="col2"  width="80px" />
+			<column label="mail"  id="col3"  width="80px" />
+			<column label="act"  id="col4" width="35px" />
+			<column label="perfil" id="col5" width="80px"/>
+							
+			<column label="a" id="col7" width="50px"  />
+			<column label="d" id="col8" width="50px"  />
+			<column label="u" id="col9" width="50px"  />
+			
+		</columns>
+		<rows>
+		 	<row self="@{each=data}">
+		 	
+			 <label value="@{data.idusr}" style="font-size:5pt"/>
+			 <label value="@{data.name}"  style="font-size:5pt"/>
+			 <label value="@{data.email}" style="font-size:5pt"/>
+			 <label value="@{data.act}" style="font-size:5pt"/>
+			 
+			 <combobox value="@{data.prfnm}" >
+			 	<comboitem label="admin"/>
+			 	<comboitem label="super"/>
+			 	<comboitem label="query"/>
+			 </combobox>				
+			 <button forward="onComprar"   image="faces/resources/pic/gancho.png" id="@{data.idusr}"/>
+			 <button forward="onComprar"   image="faces/resources/pic/delete.png" id="@{data.aux}" />	
+			 <button forward="onUpdate"  image="faces/resources/pic/update.png"  />			
+			</row>
+		</rows>
+		
+</grid>
+
+</window>
+</zk>

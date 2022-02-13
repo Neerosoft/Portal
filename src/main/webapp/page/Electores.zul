@@ -1,0 +1,58 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" root="./winelectores"?>
+<?link rel="shortcut icon" type="image/x-icon" href="resources/pic/java.ico" ?>
+<?meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/?>
+<zk>
+
+<window id="winelectores"  border="normal" apply="portal.org.driver.Electores"
+position="center" closable="true"    sizable="false" mode="modal"
+style="opacity: 0.8;font-size:8pt" height="100%" width="100%" minimizable="false" maximizable="false"
+contentStyle="overflow:auto;">
+<caption image="faces/resources/pic/16.png" label="Circuito 8-10" style="font-size:8pt" />
+
+
+<toolbar id="toolbar">
+	<label value="Provincia:" visible="false"/>
+	<combobox id="cbbprov" width="150px" readonly="true" constraint="no empty" tooltiptext="Elija una provincia" disabled="true" visible="false"/>
+	<label value="Distrito:" visible="false"/>
+	<combobox id="cbbdst" width="150px" readonly="true" constraint="no empty" tooltiptext="Elija un distrito" disabled="true" visible="false"/>
+	<label value="Corregimiento:" style="font-size:8pt"/>
+	<combobox id="cbbcrr" width="150px" readonly="true" constraint="no empty" tooltiptext="Elija un Corregimiento" style="font-size:8pt"/>
+	<button label="Buscar"  image="faces/resources/pic/gancho.png" id="btnBuscar" style="font-size:8pt"/>
+
+</toolbar>
+
+<grid id="griddata" visible="false" emptyMessage="NO SE ENCONTRARON REGISTROS"  mold="paging" pagingPosition="both" style="overflow: scroll;" width="100%">
+		<columns sizable="true">
+			<column label="crr"  id="col1" width="80px" />
+			<column label="nm"   id="col2"  width="200px" sort="auto(nombre)" />
+			<column label="ced"  id="col3"  width="80px" />
+			<column label="ed"  id="col4" width="40px" />
+			<column label="fi" id="col5"  visible="false"/>
+			<column label="cvo" id="col6" width="50px"  />
+			<column label="me" id="col7" width="50px"  />
+			<column label="dir" id="col8" width="200px"   />
+			<column label="phone" id="col9" width="60px"  />
+			
+			
+		</columns>
+		<rows>
+		 	<row self="@{each=data}">
+		 	
+			 <label value="@{data.corregimiento}" style="font-size:5pt"/>
+			 <label value="@{data.nombre}"  style="font-size:5pt"/>
+			 <label value="@{data.cedula}" style="font-size:5pt"/>
+			 <label value="@{data.edad}" style="font-size:5pt"/>
+			 <label value="@{data.insc}"/>
+			 <label value="@{data.centro}" style="font-size:5pt"/>
+			 <label value="@{data.mesa}" style="font-size:5pt"/>
+			 <label value="@{data.direccion}" style="font-size:5pt"/>
+			  <label value="@{data.phone}" style="font-size:5pt"/>
+			
+			</row>
+		</rows>
+		
+</grid>
+
+
+</window>
+</zk>
