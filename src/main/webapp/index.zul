@@ -10,7 +10,7 @@
 <style>
 body{
 /* background-image:url('faces/resources/pic/cristina.jpg'); background-color: #cfcfcf */
- background-image:url('faces/resources/pic/calibri.jpg');
+ background-image:url('faces/resources/pic/wy.png');
  height: 100%;
  width:100%; 
  background-position: center;
@@ -39,7 +39,7 @@ viewModel="@id('vm') @init('portal.org.driver.Index')"  width="100%">
 </north>
         
 <center border="normal" autoscroll="true"
-style=" background-image:url('faces/resources/pic/calibri.jpg');background-repeat: no-repeat; background-size: cover;
+style=" background-image:url('faces/resources/pic/wy.png');background-repeat: no-repeat; background-size: cover;
 background-position: center;height: 100%;width:100%" id="leaf"> 			
   <div align="right">
  <button label="" id="btnSalir" image="faces/resources/pic/account.png" />
